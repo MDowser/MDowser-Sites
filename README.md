@@ -7,24 +7,23 @@ MDowser vendors this file as `assets/builtin_sites.txt` via an explicit manual s
 
 One entry per line:
 
-`<url><TAB><title>`
+`<url> | <title>`
 
+- The separator is a pipe `|` (split on the first one, both sides trimmed).
 - Blank lines and lines starting with `#` are ignored.
-- `URL` must be a page MDowser can open (`https://`, or local `file://`).
+- `URL` must be a page MDowser can open (`https://` with markdown response or `index.md`).
 - Use normalized store form: trailing `/` for HTTPS roots (e.g. `https://example.com/`).
-- Append new entries at the end: display order = file order.
+- To grow the list add new entries at any random line.
 - Titles are short human names (max ~60 chars).
 
 Example:
 
-    https://example.com/<TAB>Example
-    https://docs.example.com/<TAB>Example Docs
-
-(where `<TAB>` is a literal tab character)
+    https://example.com/ | Example
+    https://docs.example.com/ | Example Docs
 
 ## Contribute
 
-1. Append one line at the end of `builtin_sites.txt` in the same format.
+1. Add one line at any random line of `builtin_sites.txt` in the same format.
 2. Keep display order stable: don't reorder or edit existing lines unless the URL is dead.
 3. Open a PR. No automated checks run here.
 
